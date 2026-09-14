@@ -3,172 +3,371 @@ import Head from 'next/head';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-indigo-500 selection:text-white font-sans">
+    <div className="min-h-screen bg-black text-white font-mono selection:bg-white selection:text-black">
       <Head>
-        <title>ResilientPay | Connectivity-Resilient Payments</title>
-        <meta name="description" content="Research-grade connectivity-resilient payment protocol." />
+        <title>ResilientPay | Connectivity-Resilient Payment Research</title>
+        <meta name="description" content="Payments designed for unreliable connectivity." />
       </Head>
 
-      {/* Navigation */}
-      <nav className="fixed w-full z-50 border-b border-white/10 bg-black/50 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="text-xl font-bold tracking-tighter flex items-center gap-2">
-            <div className="w-6 h-6 bg-white rounded-full"></div>
-            ResilientPay
+      {/* 1. Header */}
+      <header className="fixed w-full top-0 z-50 bg-black border-b border-white/20">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between text-xs tracking-widest uppercase">
+          <div className="font-bold flex items-center gap-4">
+            <span className="w-3 h-3 bg-white block"></span>
+            RESPAY / RESEARCH PROTOTYPE
           </div>
-          <div className="hidden md:flex gap-8 text-sm font-medium text-gray-400">
-            <a href="#features" className="hover:text-white transition-colors">Features</a>
-            <a href="#architecture" className="hover:text-white transition-colors">Architecture</a>
-            <a href="#" className="hover:text-white transition-colors">Documentation</a>
-          </div>
-          <button className="bg-white text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-200 transition-colors">
-            Get Started
-          </button>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-500/20 rounded-full blur-[120px] opacity-50 pointer-events-none"></div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm font-medium text-indigo-300 mb-8">
-            <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
-            v1.0 Protocol Draft Available
-          </div>
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 bg-gradient-to-br from-white to-gray-500 bg-clip-text text-transparent">
-            ResilientPay
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-            Research-grade connectivity-resilient payment protocol. 
-            Transact securely anywhere, anytime—even entirely offline.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-gray-200 transition-all shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]">
-              Read the Whitepaper
-            </button>
-            <button className="bg-white/10 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-all border border-white/10">
-              View on GitHub
-            </button>
+          <nav className="hidden lg:flex gap-8 text-gray-400">
+            <a href="#system" className="hover:text-white transition-colors">System</a>
+            <a href="#demo" className="hover:text-white transition-colors">Demo</a>
+            <a href="#protocol" className="hover:text-white transition-colors">Protocol</a>
+            <a href="#research" className="hover:text-white transition-colors">Research</a>
+            <a href="#docs" className="hover:text-white transition-colors">Documentation</a>
+          </nav>
+          <div className="hidden lg:block">
+            <a href="#contact" className="hover:text-white transition-colors text-gray-400">Contact</a>
           </div>
         </div>
-      </section>
+      </header>
 
-      {/* Features Section */}
-      <section id="features" className="py-24 border-t border-white/5 bg-black">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">Core Protocol Features</h2>
-            <p className="text-gray-400 max-w-2xl text-lg">Designed for environments with degraded or non-existent connectivity, ensuring continuous economic exchange.</p>
+      <main className="pt-24 pb-20 max-w-7xl mx-auto px-6">
+        
+        {/* 2. Hero */}
+        <section className="py-20 lg:py-32 grid lg:grid-cols-2 gap-16 border-b border-white/20">
+          <div>
+            <div className="text-xs font-bold tracking-widest text-gray-500 mb-8 uppercase">
+              Connectivity-Resilient Payment Research
+            </div>
+            <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 font-sans tracking-tight">
+              Payments designed for unreliable connectivity.
+            </h1>
+            <p className="text-lg text-gray-400 mb-12 max-w-lg leading-relaxed">
+              ResilientPay is a research prototype exploring how bounded offline authorization, local transaction exchange, and eventual reconciliation can preserve payment integrity when conventional connectivity is unavailable.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 font-bold text-sm tracking-widest uppercase">
+              <button className="px-8 py-4 bg-white text-black hover:bg-gray-200 transition-colors">
+                Explore the System
+              </button>
+              <button className="px-8 py-4 border border-white/20 hover:bg-white/10 transition-colors">
+                See the Live Demo
+              </button>
+            </div>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Feature 1 */}
-            <div className="p-8 rounded-3xl bg-white/[0.02] border border-white/10 hover:bg-white/[0.04] transition-colors group">
-              <div className="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
+          <div className="relative">
+            <div className="border border-white/20 p-8 h-full flex flex-col justify-between bg-white/[0.02]">
+              <div className="mb-12">
+                <div className="text-xs tracking-widest text-gray-500 mb-4 uppercase">Signal Line</div>
+                <div className="space-y-6 font-bold">
+                  <div className="flex items-center gap-4">
+                    <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                    <div className="flex-1 border-t border-dashed border-white/20"></div>
+                    <div className="text-sm">INTERNET</div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                    <div className="flex-1 border-t border-dashed border-white/20"></div>
+                    <div className="text-sm">PROXIMITY</div>
+                  </div>
+                  <div className="flex items-center gap-4 opacity-50">
+                    <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
+                    <div className="flex-1 border-t border-dashed border-white/20"></div>
+                    <div className="text-sm">LOCAL STORAGE</div>
+                  </div>
+                  <div className="flex items-center gap-4 opacity-30">
+                    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                    <div className="flex-1 border-t border-dashed border-white/20"></div>
+                    <div className="text-sm">SYNCHRONIZATION</div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-3">Offline Budgets</h3>
-              <p className="text-gray-400 leading-relaxed">
-                Securely provision and manage funds locally. Devices can spend up to their authorized limits without contacting a centralized ledger.
-              </p>
-            </div>
-
-            {/* Feature 2 */}
-            <div className="p-8 rounded-3xl bg-white/[0.02] border border-white/10 hover:bg-white/[0.04] transition-colors group">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
+              
+              <div className="text-xs text-gray-400 space-y-2 border-t border-white/20 pt-6">
+                <div><span className="text-white">TRANSPORT /</span> NFC · BLE · QR · SMS · INTERNET</div>
+                <div><span className="text-white">SECURITY /</span> SIGNED TRANSACTION ENVELOPES</div>
+                <div><span className="text-white">SETTLEMENT /</span> EVENTUAL RECONCILIATION</div>
               </div>
-              <h3 className="text-xl font-bold mb-3">NFC, BLE, & QR Transports</h3>
-              <p className="text-gray-400 leading-relaxed">
-                Pluggable transport layer supporting multiple peer-to-peer transmission mediums to execute transactions anywhere.
-              </p>
-            </div>
-
-            {/* Feature 3 */}
-            <div className="p-8 rounded-3xl bg-white/[0.02] border border-white/10 hover:bg-white/[0.04] transition-colors group">
-              <div className="w-12 h-12 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Cryptographic Invariants</h3>
-              <p className="text-gray-400 leading-relaxed">
-                Hardware-backed signatures and succinct proofs guarantee double-spending prevention and eventual settlement consistency.
-              </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Architecture Section */}
-      <section id="architecture" className="py-24 border-t border-white/5 relative overflow-hidden">
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-purple-900/10 rounded-full blur-[100px] pointer-events-none"></div>
+        {/* 3. Connectivity Problem */}
+        <section className="py-24 border-b border-white/20">
+          <h2 className="text-3xl lg:text-5xl font-sans font-bold mb-8 max-w-3xl leading-tight">
+            When communication fails, payment state still needs a reliable answer.
+          </h2>
+          <p className="text-gray-400 max-w-2xl text-lg mb-16 leading-relaxed">
+            A payment can move through more than one communication path. ResilientPay studies how a transaction can be authenticated locally, transferred through available proximity channels, retained safely, and reconciled when connectivity returns.
+          </p>
+          
+          <div className="flex flex-col md:flex-row items-center justify-between p-8 border border-white/20 bg-white/[0.01] gap-8">
+            <div className="text-center w-full">
+              <div className="text-xs tracking-widest text-gray-500 mb-2">STATE 1</div>
+              <div className="font-bold">CONNECTED</div>
+            </div>
+            <div className="hidden md:block text-gray-600">→</div>
+            <div className="text-center w-full">
+              <div className="text-xs tracking-widest text-gray-500 mb-2">STATE 2</div>
+              <div className="font-bold">LOW CONNECTIVITY</div>
+            </div>
+            <div className="hidden md:block text-gray-600">→</div>
+            <div className="text-center w-full">
+              <div className="text-xs tracking-widest text-gray-500 mb-2">STATE 3</div>
+              <div className="font-bold text-white">PROXIMITY AVAILABLE</div>
+            </div>
+            <div className="hidden md:block text-gray-600">→</div>
+            <div className="text-center w-full">
+              <div className="text-xs tracking-widest text-gray-500 mb-2">STATE 4</div>
+              <div className="font-bold">LOCAL STORAGE</div>
+            </div>
+            <div className="hidden md:block text-gray-600">→</div>
+            <div className="text-center w-full">
+              <div className="text-xs tracking-widest text-gray-500 mb-2">STATE 5</div>
+              <div className="font-bold">RECONCILIATION</div>
+            </div>
+          </div>
+        </section>
+
+        {/* 4. What ResilientPay is & 6. Architecture & 7. Multi-modal */}
+        <section id="system" className="py-24 border-b border-white/20">
+          <h2 className="text-3xl lg:text-5xl font-sans font-bold mb-8">
+            One transaction model. Multiple ways to move it.
+          </h2>
+          <p className="text-gray-400 max-w-2xl text-lg mb-16 leading-relaxed">
+            The same logical payment object can move through internet, NFC, Bluetooth, QR, or store-and-forward SMS transport. Transport determines how information travels. It does not determine whether the payment is valid.
+          </p>
+
+          <div className="overflow-x-auto mb-16">
+            <table className="w-full text-left border-collapse min-w-[800px]">
+              <thead>
+                <tr className="border-b border-white/20 text-xs tracking-widest text-gray-500 uppercase">
+                  <th className="p-4 font-normal">Transport</th>
+                  <th className="p-4 font-normal">Connectivity assumption</th>
+                  <th className="p-4 font-normal">Strength</th>
+                  <th className="p-4 font-normal">Constraint</th>
+                </tr>
+              </thead>
+              <tbody className="text-sm">
+                <tr className="border-b border-white/10 hover:bg-white/[0.02]">
+                  <td className="p-4 font-bold">Internet</td>
+                  <td className="p-4 text-gray-400">full network</td>
+                  <td className="p-4 text-gray-400">normal connected operation</td>
+                  <td className="p-4 text-gray-500">unavailable during outage</td>
+                </tr>
+                <tr className="border-b border-white/10 hover:bg-white/[0.02]">
+                  <td className="p-4 font-bold">NFC</td>
+                  <td className="p-4 text-gray-400">physical proximity</td>
+                  <td className="p-4 text-gray-400">short local exchange</td>
+                  <td className="p-4 text-gray-500">requires supported hardware</td>
+                </tr>
+                <tr className="border-b border-white/10 hover:bg-white/[0.02]">
+                  <td className="p-4 font-bold">BLE</td>
+                  <td className="p-4 text-gray-400">local radio</td>
+                  <td className="p-4 text-gray-400">flexible proximity transport</td>
+                  <td className="p-4 text-gray-500">pairing/discovery complexity</td>
+                </tr>
+                <tr className="border-b border-white/10 hover:bg-white/[0.02]">
+                  <td className="p-4 font-bold">QR</td>
+                  <td className="p-4 text-gray-400">optical proximity</td>
+                  <td className="p-4 text-gray-400">broad compatibility</td>
+                  <td className="p-4 text-gray-500">human/device interaction constraints</td>
+                </tr>
+                <tr className="border-b border-white/10 hover:bg-white/[0.02]">
+                  <td className="p-4 font-bold">SMS</td>
+                  <td className="p-4 text-gray-400">telecom path</td>
+                  <td className="p-4 text-gray-400">store-and-forward channel</td>
+                  <td className="p-4 text-gray-500">delayed, duplicated, reordered</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="border border-white/20 p-8 bg-white/[0.01]">
+            <div className="text-xs tracking-widest text-gray-500 mb-8 uppercase">Architecture Flow</div>
+            <div className="flex flex-col lg:flex-row justify-between items-center gap-4 text-sm font-bold text-center">
+              <div className="w-full lg:w-auto p-4 border border-white/20">Payer App</div>
+              <div className="text-gray-600">→</div>
+              <div className="w-full lg:w-auto p-4 border border-white/20">Payment Engine</div>
+              <div className="text-gray-600">→</div>
+              <div className="w-full lg:w-auto p-4 border border-white/20">Transport Adapter</div>
+              <div className="text-gray-600">→</div>
+              <div className="w-full lg:w-auto p-4 border border-white/20">Merchant App</div>
+              <div className="text-gray-600">→</div>
+              <div className="w-full lg:w-auto p-4 border border-white/20">Local Ledger</div>
+              <div className="text-gray-600">→</div>
+              <div className="w-full lg:w-auto p-4 border border-white/20">Reconciliation API</div>
+              <div className="text-gray-600">→</div>
+              <div className="w-full lg:w-auto p-4 border border-white/20">Backend</div>
+            </div>
+          </div>
+        </section>
+
+        {/* 5. Demo */}
+        <section id="demo" className="py-24 border-b border-white/20">
+          <h2 className="text-xs tracking-widest text-gray-500 mb-4 uppercase">Product Demonstration</h2>
+          <h3 className="text-3xl lg:text-5xl font-sans font-bold mb-8">
+            See what happens when the network disappears.
+          </h3>
+          <p className="text-gray-400 max-w-2xl text-lg mb-16 leading-relaxed">
+            Start connected. Disable the network. Complete a bounded local transaction. Restore connectivity and watch the transaction move from local storage to reconciliation.
+          </p>
+
+          <div className="border border-white/20 bg-black overflow-hidden relative">
+            <div className="border-b border-white/20 bg-white/5 p-4 flex justify-between items-center">
+              <div className="text-xs font-bold tracking-widest">INTERACTIVE SIMULATION</div>
+              <div className="flex gap-2">
+                <span className="w-3 h-3 rounded-full bg-red-500"></span>
+                <span className="w-3 h-3 rounded-full bg-yellow-500"></span>
+                <span className="w-3 h-3 rounded-full bg-green-500"></span>
+              </div>
+            </div>
+            <div className="p-8 lg:p-12 font-mono text-sm space-y-8">
+              <div className="flex justify-between items-start border-b border-white/10 pb-4">
+                <div>
+                  <div className="text-gray-500 mb-1">Connectivity</div>
+                  <div className="font-bold text-red-500">OFFLINE</div>
+                </div>
+                <div>
+                  <div className="text-gray-500 mb-1">Transport</div>
+                  <div className="font-bold">NFC</div>
+                </div>
+                <div>
+                  <div className="text-gray-500 mb-1">Amount</div>
+                  <div className="font-bold">₹240</div>
+                </div>
+                <div>
+                  <div className="text-gray-500 mb-1">State</div>
+                  <div className="font-bold text-yellow-500">AUTHORIZED LOCALLY</div>
+                </div>
+              </div>
+
+              <div className="flex justify-center items-center py-12 text-gray-400 text-xs tracking-widest">
+                PAYER <span className="mx-4">─── NFC ───</span> MERCHANT <span className="mx-4">───</span> LOCAL LEDGER
+              </div>
+
+              <div className="flex justify-center">
+                <button className="px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-colors uppercase font-bold text-xs tracking-widest">
+                  Restore Connectivity
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 8. Transaction State Journey */}
+        <section className="py-24 border-b border-white/20">
+          <div className="text-xs tracking-widest text-gray-500 mb-12 uppercase">Transaction State Journey</div>
+          <div className="flex flex-wrap items-center gap-4 text-sm font-bold">
+            <span className="text-white">CREATED</span>
+            <span className="text-gray-600">→</span>
+            <span className="text-white">AUTHORIZED</span>
+            <span className="text-gray-600">→</span>
+            <span className="text-white">SIGNED</span>
+            <span className="text-gray-600">→</span>
+            <span className="text-white">TRANSFERRED</span>
+            <span className="text-gray-600">→</span>
+            <span className="text-white">RECEIVED</span>
+            <span className="text-gray-600">→</span>
+            <span className="text-gray-400">STORED</span>
+            <span className="text-gray-600">→</span>
+            <span className="text-yellow-500">SYNC_PENDING</span>
+            <span className="text-gray-600">→</span>
+            <span className="text-gray-600">RECONCILED</span>
+          </div>
+        </section>
+
+        {/* 9. Security Section */}
+        <section id="protocol" className="py-24 border-b border-white/20">
+          <h2 className="text-3xl lg:text-5xl font-sans font-bold mb-8">
+            Offline does not mean unverified.
+          </h2>
+          <p className="text-gray-400 max-w-2xl text-lg mb-16 leading-relaxed">
+            The prototype uses device-bound credentials, signed transaction envelopes, counters, replay controls, local ledger integrity, and backend reconciliation checks to constrain what can be accepted during degraded connectivity.
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+            <div className="border-t border-white/20 pt-4">
+              <h3 className="font-bold mb-2">CREDENTIAL</h3>
+              <p className="text-sm text-gray-400">Device-bound keys ensuring non-repudiation of payer.</p>
+            </div>
+            <div className="border-t border-white/20 pt-4">
+              <h3 className="font-bold mb-2">SIGNATURE</h3>
+              <p className="text-sm text-gray-400">Ed25519 signatures over transaction envelopes.</p>
+            </div>
+            <div className="border-t border-white/20 pt-4">
+              <h3 className="font-bold mb-2">COUNTER</h3>
+              <p className="text-sm text-gray-400">Protects against replay of an already-used sequence.</p>
+            </div>
+            <div className="border-t border-white/20 pt-4">
+              <h3 className="font-bold mb-2">LEDGER</h3>
+              <p className="text-sm text-gray-400">Local append-only integrity for stored transactions.</p>
+            </div>
+            <div className="border-t border-white/20 pt-4">
+              <h3 className="font-bold mb-2">RECONCILIATION</h3>
+              <p className="text-sm text-gray-400">Idempotent eventual global consistency check.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* 11. Research Section */}
+        <section id="research" className="py-24">
+          <h2 className="text-3xl lg:text-5xl font-sans font-bold mb-8">
+            Built to be measured, attacked, and questioned.
+          </h2>
+          <p className="text-gray-400 max-w-2xl text-lg mb-12 leading-relaxed">
+            ResilientPay is evaluated through controlled simulations and device experiments covering unreliable transport, duplicate messages, delayed synchronization, replay attempts, reconciliation conflicts, and risk-model performance.
+          </p>
+          <button className="px-8 py-4 bg-white text-black hover:bg-gray-200 transition-colors font-bold text-sm tracking-widest uppercase">
+            Read the Protocol
+          </button>
+        </section>
+
+      </main>
+
+      {/* 15. Footer */}
+      <footer className="border-t border-white/20 bg-black pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-16 md:text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">System Architecture</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-lg">A modular, three-tier architecture optimized for adversarial offline environments.</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 text-sm">
+            <div>
+              <div className="text-xs tracking-widest text-gray-500 mb-4 uppercase">Architecture</div>
+              <ul className="space-y-2 text-gray-400 font-bold">
+                <li><a href="#" className="hover:text-white">Core SDK</a></li>
+                <li><a href="#" className="hover:text-white">Transport Adapters</a></li>
+                <li><a href="#" className="hover:text-white">Settlement Backend</a></li>
+              </ul>
+            </div>
+            <div>
+              <div className="text-xs tracking-widest text-gray-500 mb-4 uppercase">Protocol</div>
+              <ul className="space-y-2 text-gray-400 font-bold">
+                <li><a href="#" className="hover:text-white">Specification</a></li>
+                <li><a href="#" className="hover:text-white">Security Model</a></li>
+                <li><a href="#" className="hover:text-white">Experiments</a></li>
+              </ul>
+            </div>
+            <div>
+              <div className="text-xs tracking-widest text-gray-500 mb-4 uppercase">Resources</div>
+              <ul className="space-y-2 text-gray-400 font-bold">
+                <li><a href="#" className="hover:text-white">API Reference</a></li>
+                <li><a href="#" className="hover:text-white">Developer Guide</a></li>
+                <li><a href="#" className="hover:text-white">GitHub</a></li>
+              </ul>
+            </div>
+            <div>
+              <div className="text-xs tracking-widest text-gray-500 mb-4 uppercase">Legal</div>
+              <ul className="space-y-2 text-gray-400 font-bold">
+                <li><a href="#" className="hover:text-white">Terms of Service</a></li>
+                <li><a href="#" className="hover:text-white">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-white">Security Disclosure</a></li>
+              </ul>
+            </div>
           </div>
-
-          <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
-            {/* Tier 1 */}
-            <div className="flex-1 w-full p-8 rounded-3xl bg-gradient-to-b from-white/[0.05] to-transparent border border-white/10 relative">
-              <div className="text-sm font-bold text-indigo-400 mb-4 tracking-widest uppercase">Layer 1</div>
-              <h3 className="text-2xl font-bold mb-2">Transport Adapters</h3>
-              <p className="text-gray-400 mb-6">Proximity-based communication protocols handling raw byte exchange over NFC, BLE, and dynamic QR frames.</p>
-              <div className="flex gap-2 flex-wrap">
-                <span className="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs">NFC ISO-DEP</span>
-                <span className="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs">BLE GATT</span>
-                <span className="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs">Fountain QR</span>
-              </div>
-            </div>
-
-            <div className="hidden md:flex text-white/20">
-              <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </div>
-
-            {/* Tier 2 */}
-            <div className="flex-1 w-full p-8 rounded-3xl bg-gradient-to-b from-indigo-500/10 to-transparent border border-indigo-500/20 relative shadow-[0_0_50px_-20px_rgba(99,102,241,0.2)]">
-              <div className="absolute -top-3 -right-3 w-6 h-6 bg-indigo-500 rounded-full blur-md opacity-50"></div>
-              <div className="text-sm font-bold text-indigo-400 mb-4 tracking-widest uppercase">Layer 2</div>
-              <h3 className="text-2xl font-bold mb-2">Core SDK</h3>
-              <p className="text-gray-400 mb-6">State machine managing the offline ledger, budget reconciliation, and hardware secure element signing.</p>
-              <div className="flex gap-2 flex-wrap">
-                <span className="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs">Rust Core</span>
-                <span className="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs">WASM</span>
-                <span className="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs">Secure Enclave</span>
-              </div>
-            </div>
-
-            <div className="hidden md:flex text-white/20">
-              <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </div>
-
-            {/* Tier 3 */}
-            <div className="flex-1 w-full p-8 rounded-3xl bg-gradient-to-b from-white/[0.05] to-transparent border border-white/10 relative">
-              <div className="text-sm font-bold text-indigo-400 mb-4 tracking-widest uppercase">Layer 3</div>
-              <h3 className="text-2xl font-bold mb-2">Settlement Backend</h3>
-              <p className="text-gray-400 mb-6">Global asynchronous reconciliation engine validating cryptograms and ensuring eventual ledger consistency.</p>
-              <div className="flex gap-2 flex-wrap">
-                <span className="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs">Go Services</span>
-                <span className="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs">PostgreSQL</span>
-                <span className="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs">Zero-Knowledge Proofs</span>
-              </div>
+          
+          <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 font-bold">
+            <div>© 2026 ResilientPay Research Project. Open Source under MIT.</div>
+            <div className="px-3 py-1 border border-white/20 bg-white/5 uppercase tracking-widest text-white">
+              RESEARCH PROTOTYPE
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-12 border-t border-white/5 bg-black/50 text-center text-gray-500 text-sm">
-        <p>© 2026 ResilientPay Protocol. Open Source under MIT.</p>
       </footer>
     </div>
   );
