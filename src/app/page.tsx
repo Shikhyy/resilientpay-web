@@ -1106,7 +1106,7 @@ export default function Home() {
                 <p className="text-base text-[#5E6763] font-sans leading-relaxed mb-4">
                   ResilientPay does not itself claim authorization to operate a regulated payment
                   system, process live UPI transactions, move real customer funds, or act as a payment
-                  service provider under any jurisdiction's financial regulation.
+                  service provider under any jurisdiction&apos;s financial regulation.
                 </p>
                 <p className="text-base text-[#5E6763] font-sans leading-relaxed mb-4">
                   The prototype is intended to demonstrate and measure a connectivity-resilient payment
