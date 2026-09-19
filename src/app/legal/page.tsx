@@ -29,9 +29,9 @@ export default function LegalPage() {
             </p>
           </div>
 
-          <section className="space-y-4">
+          <section id="terms" className="space-y-4">
             <h2 className="text-lg font-mono font-bold uppercase tracking-wider text-[#1A1A1A]">
-              1. Prototype Scope & Non-Production Nature
+              1. Prototype Scope & Terms of Use
             </h2>
             <p className="text-sm text-[#404040] leading-relaxed">
               ResilientPay is an experimental academic and engineering research prototype developed to study
@@ -58,29 +58,31 @@ export default function LegalPage() {
             </p>
           </section>
 
-          <section className="space-y-4 border-t border-[#E5E0D8] pt-6">
+          <section id="privacy" className="space-y-4 border-t border-[#E5E0D8] pt-6">
             <h2 className="text-lg font-mono font-bold uppercase tracking-wider text-[#1A1A1A]">
-              3. Cryptographic and Device Security
+              3. Privacy Policy & Data Handling
             </h2>
             <p className="text-sm text-[#404040] leading-relaxed">
-              The cryptographic profile employs standard RFC 8032 Ed25519 digital signatures and hardware-backed
-              key isolation patterns (AndroidKeyStore AES-256-GCM seed wrapping). However, physical side-channel
-              resistance, StrongBox tamper-resistance, and hardware isolation guarantees are bounded by the research
-              evaluation environment.
+              ResilientPay does not collect, process, or transmit personally identifiable information (PII), bank account
+              numbers, UPI PINs, or biometric data. Cryptographic identities are pseudonymous 128-bit UUID credentials
+              bound locally to hardware enclaves. Offline transactions are stored only in local tamper-evident ledgers on device.
             </p>
           </section>
 
-          <section className="space-y-4 border-t border-[#E5E0D8] pt-6">
+          <section id="security" className="space-y-4 border-t border-[#E5E0D8] pt-6">
             <h2 className="text-lg font-mono font-bold uppercase tracking-wider text-[#1A1A1A]">
-              4. Responsible Security Disclosure
+              4. Cryptographic Security & Disclosure
             </h2>
             <p className="text-sm text-[#404040] leading-relaxed">
+              The cryptographic profile employs standard RFC 8032 Ed25519 digital signatures and hardware-backed
+              key isolation patterns (AndroidKeyStore AES-256-GCM seed wrapping).
+            </p>
+            <p className="text-sm text-[#404040] leading-relaxed">
               If you identify an architectural weakness, replay vector, side-channel leakage, or cryptographic defect
-              within the protocol implementation, please report it directly through our research vulnerability
-              reporting process:
+              within the protocol implementation, please report it via GitHub Issues or to our research team:
             </p>
             <div className="bg-[#F5F5F4] border border-[#1A1A1A] p-4 font-mono text-xs">
-              <code>Security Contact: security-research@resilientpay.internal</code>
+              <code>Security Contact: https://github.com/Shikhyy/ResilientPay/security</code>
             </div>
           </section>
 

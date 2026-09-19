@@ -1141,10 +1141,10 @@ export default function Home() {
               {
                 category: "Architecture",
                 docs: [
-                  { title: "ADR-001: Dual-Device Android Architecture", href: "#" },
-                  { title: "ADR-002: Pure Rust Core via UniFFI", href: "#" },
-                  { title: "ADR-003: Go Backend Reconciliation Engine", href: "#" },
-                  { title: "ADR-012: Android Keystore-Wrapped Signer", href: "#" },
+                  { title: "ADR-001: Dual-Device Android Architecture", href: "https://github.com/Shikhyy/ResilientPay/blob/main/docs/09-architecture-decisions/ADR-001-kotlin-android.md" },
+                  { title: "ADR-002: Pure Rust Core via UniFFI", href: "https://github.com/Shikhyy/ResilientPay/blob/main/docs/09-architecture-decisions/ADR-002-rust-crypto.md" },
+                  { title: "ADR-003: Go Backend Reconciliation Engine", href: "https://github.com/Shikhyy/ResilientPay/blob/main/docs/09-architecture-decisions/ADR-003-go-backend.md" },
+                  { title: "ADR-012: Android Keystore-Wrapped Signer", href: "https://github.com/Shikhyy/ResilientPay/blob/main/docs/09-architecture-decisions/ADR-012-android-rust-crypto-ffi-boundary.md" },
                 ],
               },
               {
@@ -1152,15 +1152,15 @@ export default function Home() {
                 docs: [
                   {
                     title: "PAYMENT_PROTOCOL.md — End-to-end payment envelope",
-                    href: "https://github.com/Shikhyy/ResilientPay",
+                    href: "https://github.com/Shikhyy/ResilientPay/blob/main/docs/05-protocol/PAYMENT_PROTOCOL.md",
                   },
                   {
                     title: "TRANSACTION_STATE_MACHINE.md — Formal states",
-                    href: "https://github.com/Shikhyy/ResilientPay",
+                    href: "https://github.com/Shikhyy/ResilientPay/blob/main/docs/05-protocol/TRANSACTION_STATE_MACHINE.md",
                   },
                   {
                     title: "ADR-008: Canonical CBOR Serialization",
-                    href: "#",
+                    href: "https://github.com/Shikhyy/ResilientPay/blob/main/docs/09-architecture-decisions/ADR-008-cbor-canonical-serialization.md",
                   },
                 ],
               },
@@ -1169,11 +1169,11 @@ export default function Home() {
                 docs: [
                   {
                     title: "SECURITY_SPEC.md — Threat model and trust boundaries",
-                    href: "https://github.com/Shikhyy/ResilientPay",
+                    href: "https://github.com/Shikhyy/ResilientPay/blob/main/docs/03-security/SECURITY_SPEC.md",
                   },
                   {
                     title: "OFFLINE_CREDENTIAL_SPEC.md — Device-bound tokens",
-                    href: "https://github.com/Shikhyy/ResilientPay",
+                    href: "https://github.com/Shikhyy/ResilientPay/blob/main/docs/03-security/OFFLINE_CREDENTIAL_SPEC.md",
                   },
                 ],
               },
@@ -1182,15 +1182,15 @@ export default function Home() {
                 docs: [
                   {
                     title: "RECONCILIATION_SPEC.md — 8-step ingestion flow",
-                    href: "https://github.com/Shikhyy/ResilientPay",
+                    href: "https://github.com/Shikhyy/ResilientPay/blob/main/docs/05-protocol/RECONCILIATION_SPEC.md",
                   },
                   {
                     title: "ADR-010: ML Advisory-Only Gate",
-                    href: "#",
+                    href: "https://github.com/Shikhyy/ResilientPay/blob/main/docs/09-architecture-decisions/ADR-010-ml-advisory-only.md",
                   },
                   {
                     title: "simulator/run_experiments.py — Deterministic scenario runner",
-                    href: "https://github.com/Shikhyy/ResilientPay",
+                    href: "https://github.com/Shikhyy/ResilientPay/tree/main/simulator",
                   },
                 ],
               },
